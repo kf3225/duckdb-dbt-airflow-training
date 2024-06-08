@@ -1,0 +1,15 @@
+version: 2
+
+sources:
+  - name: external_source
+    tables:
+      - name: customers
+        columns:
+          - name: id
+            type: varchar
+          - name: first_name
+            type: varchar
+          - name: last_name
+            type: varchar
+        config:
+          external_location: "read_csv_auto('s3://lake/customers/*.csv')"

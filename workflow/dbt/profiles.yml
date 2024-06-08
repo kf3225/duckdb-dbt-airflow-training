@@ -1,0 +1,16 @@
+duckdb:
+  target: dev
+  outputs:
+    dev:
+      type: duckdb
+      path: /tmp/store_data.db
+      extensions:
+        - httpfs
+        - parquet
+      settings:
+        s3_region: "{{ env_var('MINIO_REGION') }}"
+        s3_access_key_id: "{{ env_var('MINIO_ROOT_USER') }}"
+        s3_secret_access_key: "{{ env_var('MINIO_ROOT_PASSWORD') }}"
+        s3_endpoint: "{{ env_var('MINIO_ENDPOINT') }}"
+        s3_url_style: "path"
+        s3_use_ssl: false

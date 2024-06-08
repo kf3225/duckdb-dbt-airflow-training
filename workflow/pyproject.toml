@@ -1,0 +1,27 @@
+[project]
+name = "workflow"
+version = "0.1.0"
+description = "Add your description here"
+authors = [{ name = "kf3225", email = "k.fujita3225@gmail.com" }]
+dependencies = [
+    "dbt-duckdb>=1.8.1",
+    "airflow-dbt>=0.4.0",
+    "apache-airflow==2.9.1",
+    "duckdb>=0.10.3",
+]
+readme = "README.md"
+requires-python = ">= 3.11"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.rye]
+managed = true
+dev-dependencies = ["dbt-osmosis>=0.12.10", "ruff>=0.4.7", "sqlfluff>=3.0.7"]
+
+[tool.hatch.metadata]
+allow-direct-references = true
+
+[tool.hatch.build.targets.wheel]
+packages = ["airflow/dags"]

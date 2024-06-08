@@ -1,0 +1,18 @@
+version: 2
+
+sources:
+  - name: external_source
+    schema: lake
+    tables:
+      - name: orders
+        columns:
+          - name: id
+            type: varchar
+          - name: user_id
+            type: varchar
+          - name: order_date
+            type: date
+          - name: status
+            type: varchar
+        config:
+          external_location: "read_csv_auto('s3://lake/orders/year=*/month=*/*.csv')"
