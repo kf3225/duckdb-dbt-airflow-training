@@ -3,9 +3,9 @@ version: 2
 sources:
   - name: external_source
     tables:
-      - name: payments
+      - name: stg_payments
         columns:
-          - name: id
+          - name: payment_id
             type: varchar
           - name: order_id
             type: varchar

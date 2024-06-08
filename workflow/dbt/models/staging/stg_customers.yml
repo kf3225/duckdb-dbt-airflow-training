@@ -3,9 +3,9 @@ version: 2
 sources:
   - name: external_source
     tables:
-      - name: customers
+      - name: stg_customers
         columns:
-          - name: id
+          - name: customer_id
             type: varchar
           - name: first_name
             type: varchar

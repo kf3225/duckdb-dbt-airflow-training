@@ -1,40 +1,26 @@
 [sqlfluff]
 # デフォルトのSQL方言を指定
 dialect = duckdb
-
 # テンプレートエンジンを指定(dbtを使う場合はdbt)
-templater = dbt
+templater = jinja
+max_line_length = 120
 
 [sqlfluff:templater:dbt]
 # dbtプロジェクトのルートディレクトリ
 project_dir = ./
-
 # dbt profilesの場所
 profiles_dir = ./
-
 # 使用するdbt profile名 
 profile = profiles
-
 # 使用するdbt target名
 target = dev
 
 [sqlfluff:rules]
-# ルールの設定
+single_table_references = unqualified
+allow_scalar = True
+capitalise_identifiers = lower
+capitalise_keywords = upper
+capitalise_functions = lower
 
-# 予約語の大文字小文字ポリシー(lower=小文字、upper=大文字、capitalizedは先頭大文字)
-capitalisation.keywords = upper
-
-# 関数名の大文字小文字ポリシー 
-capitalisation.functions = upper
-
-# 改行の強制(hanging=インデントを揃える, aligned=列を揃える)
-indentation.indentation_policy = hanging
-
-# 改行の位置(beforeまたはafter)
-indentation.line_position_data = beforeor
-
-# 改行の位置(beforeまたはafter)  
-indentation.line_position_case = beforeor
-
-# 行の長さの制限(0=無制限)
-indentation.max_line_length = 80
+[sqlfluff:indentation]
+indented_joins = False

@@ -38,3 +38,7 @@ models:
       +materialized: table
     warehouse:
       +materialized: view
+
+vars:
+  target_year: ""
+  target_month: ""

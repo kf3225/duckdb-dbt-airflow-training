@@ -4,9 +4,9 @@ sources:
   - name: external_source
     schema: lake
     tables:
-      - name: orders
+      - name: stg_orders
         columns:
-          - name: id
+          - name: order_id
             type: varchar
           - name: user_id
             type: varchar
