@@ -1,6 +1,6 @@
 # dbt-duckdb-sample
 
-DuckDBとdbtの雰囲気を掴んでみたくてHello Worldしてみたリポジトリとなります。
+DuckDBとdbtとAirflowを組み合わせた際の雰囲気を掴んでみたくてHello Worldしてみたリポジトリとなります。
 
 ## 使い方
 
