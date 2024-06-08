@@ -33,9 +33,7 @@ sequenceDiagram
     DuckDB ->> Minio: 実体参照
     Minio -->> DuckDB: 
     DuckDB ->> DuckDB: テーブル作成
-    dbt ->> DuckDB: mart層のCTAS実行
-    DuckDB ->> Minio: 実体参照
-    Minio -->> DuckDB: 
+    dbt ->> DuckDB: mart層のCTAS実行<br />参照先はstg層のテーブル
     DuckDB ->> DuckDB: テーブル作成
     BI ->> DuckDB: mart層を参照<br />(本リポジトリにダッシュボードなどは未導入)
 ```
