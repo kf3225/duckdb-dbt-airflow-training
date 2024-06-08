@@ -331,7 +331,6 @@ services:
 
   mc:
     image: minio/mc:latest
-    restart: always
     depends_on:
       - minio
     volumes:
