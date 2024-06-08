@@ -15,4 +15,4 @@ sources:
           - name: status
             type: varchar
         config:
-          external_location: "read_csv_auto('s3://lake/orders/year=*/month=*/*.csv')"
+          external_location: "read_csv_auto('s3://lake/orders/year=*/month=*/*.csv', hive_partitioning = true)"

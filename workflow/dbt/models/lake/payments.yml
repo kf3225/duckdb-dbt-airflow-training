@@ -14,4 +14,4 @@ sources:
           - name: amount
             type: integer
         config:
-          external_location: "read_csv_auto('s3://lake/payments/*.csv')"
+          external_location: "read_csv_auto('s3://lake/payments/year=*/month=*/*.csv', hive_partitioning = true)"
